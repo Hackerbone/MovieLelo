@@ -5,70 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-
-
     <div class=" hero ">
-
         <div class="form-box ">
             <div class="button-box ">
-                <div class="btn ">
-
-                </div>
+                <div class="btn " id="btn"></div>
                 <button id="logIn " type="button " class="toggle-btn login-btn " onclick="login() ">Log In</button>
-                <button id="signUp " type="button " class="toggle-btn signup-btn " onclick="register() ">Register </button>
-
-
+                <button id="signUp " type="button " class="toggle-btn signup-btn " onclick="register() ">Register</button>
             </div>
             <div class="heading ">
                 <h1 style="font-family: 'Raleway', sans-serif; ">MovieLelo</h1>
             </div>
-            <form id="login " class="input-group ">
-                <input type="text " class="input-field " placeholder="Email id " required>
-                <input type="password " class="input-field " placeholder="password " required>
-                <button type=" submit " class="submit-btn "> Log In</button>
-            </form>
+            <div class="form-container">
+                <form id="login" class="input-group">
+                    <input type="text " class="input-field " placeholder="Email id " required>
+                    <input type="password " class="input-field " placeholder="password " required>
+                    <div class="btn-container">
+                        <button type="submit" class="submit-btn ">Log In</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-container">
+                <form id="register" class="input-group ">
+                    <input type="text " class="input-field " placeholder="Your name " required>
+                    <input type="text " class="input-field " placeholder="Email id " required>
+                    <input type="password " class="input-field " placeholder="password " required>
+                    <div class="btn-container">
 
-            <form id="register " class="input-group ">
-                <input type="text " class="input-field " placeholder="Your name " required>
-                <input type="text " class="input-field " placeholder="Email id " required>
-                <input type="password " class="input-field " placeholder="password " required>
-                <button type=" submit " class="submit-btn "> Sign up</button>
-            </form>
+                        <button type="submit" class="submit-btn ">Sign up</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            var x = document.getElementById("login ");
-            var y = document.getElementById("register ");
-            var z = document.getElementById("btn ");
-            var a = document.getElementById("logIn ");
+    <script type="text/javascript">
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
 
+        function register() {
+            x.style.left = "-400px ";
+            y.style.left = "50px ";
+            z.style.left = "110px ";
+        }
 
-            var b = document.getElementById("signUp ");
+        function login() {
+            x.style.left = "50px ";
+            y.style.left = "450px ";
+            z.style.left = "0px ";
+        }
 
-            function register() {
-                x.style.left = "-400px ";
-                y.style.left = "50px ";
-                z.style.left = "110px ";
-
-                console.log(document.getElementsByClassName("login-btn").style.background)
-            }
-
-            function login() {
-                x.style.left = "50px ";
-                y.style.left = "450px ";
-                z.style.left = "0px ";
-
-            }
-
-        });
     </script>
 </body>
 
