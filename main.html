@@ -16,9 +16,35 @@
         *{
             font-family: 'Poppins', sans-serif;
         }
+
+        .bg-custom-primary{
+            background-color: #331832;
+            color: white;
+        }
+
+
+        .bg-custom-secondary{
+            background-color: #D81E58;
+        }
+        .smol-text{
+            font-size: 0.9rem;
+        }
+
+        .bg-custom-analogous{
+            background-color: #3066BE;
+            color: white;
+        }
+
+        .bg-custom-analogous:hover{
+            background-color: #3b77d8;
+            color: white;
+        }
+
+
+
     </style>
-    <div class="container-fluid bg-dark">
-        <h1 class="text-center py-3 text-light">Movies</h1>
+    <div class="container-fluid bg-custom-primary">
+        <h1 class="text-center py-4 text-light">Movies</h1>
         <div class="row pb-5 justify-content-center" id="card-container"></div>
     </div>
 
@@ -35,13 +61,13 @@
         cardContainer.innerHTML = imgArr.map((item) => {
             console.log(item)
             return (
-                `<div class="card m-2 pb-3" style="width: 18rem;">
+                `<div class="card m-2 pb-3 bg-custom-secondary" style="width: 13rem;">
                     <img src=${item} class="card-img-top py-2" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                        <p class="card-text smol-text">Some quick example text to build on the card title and make up the bulk of the card's
                         content.</p>
                     </div>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="smol-text btn bg-custom-analogous">Go somewhere</a>
                 </div>
                 `)
         })
