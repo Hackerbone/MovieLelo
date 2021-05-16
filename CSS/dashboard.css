@@ -1,6 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2090,10 +2091,49 @@ input, select, textarea {
 
 	#logo {
 		position: relative;
-		margin: 1.75em 1.5em 1.5em 1.5em;
-		min-height: 48px;
-		cursor: default;
+		
 	}
+	.profile-pic {
+		border-radius: 50%;
+		height: 100px;
+		width: 100px;
+		background-size: cover;
+		background-position: center;
+		background-blend-mode: multiply;
+		vertical-align: middle;
+		text-align: center;
+		color: transparent;
+		transition: all .3s ease;
+		text-decoration: none;
+		cursor: pointer;
+		align-items: center;
+		
+	}
+	
+	 .profile-pic:hover {
+		background-color: rgba(0,0,0,.5);
+		z-index: 10000;
+		color: #fff;
+		transition: all .3s ease;
+		text-decoration: none;
+		height: 100px;
+		width: 100px;
+		
+	}
+	.profile-pic span {
+		
+		padding-top: 2.5em;
+		padding-bottom: 4.5em;
+		font-size: small;
+		height: 100px;
+		width: 100px;
+	}
+	
+	
+	form input[type="file"] {
+			  display: none;
+			  cursor: pointer;
+	 }
 
 		#logo h1 {
 			position: relative;
