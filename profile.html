@@ -1,230 +1,238 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>MovieLelo Profile</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="CSS/dashboard.css" />
-	</head>
-	<body class="is-preload">
 
-		<!--Nav Bar-->
-		<div class="nav">
-			<input type="checkbox" id="check">
-			<label for="check" class="checkbtn">
-				<i class="fa fa-bars"></i>
-			</label>
-		
-			<label class="logo">Movie Lelo</label>
-			<ul>
-				<li><a class="active" href="#">Home</a></li>
-				<li><a href="#">Movies</a></li>
-				<li><a href="#">Tvshows</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><button type="button" class="button-1">LOGOUT</button></li>
-			</ul>
-		</div>
+<head>
+	<title>MovieLelo | Profile</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="CSS/dashboard.css" />
+</head>
 
-		<!--End of navbar-->
+<body class="is-preload">
 
-		<!-- Header -->
-			<div id="header" style="margin-top: 80px; position: fixed;">
+	<!--Nav Bar-->
+	<div class="nav">
+		<div class="hamburger checkbtn" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-				<div class="top">
+		<label class="logo">Movie Lelo</label>
+		<ul>
+			<li><a class="active" href="#">Home</a></li>
+			<li><a href="#">Movies</a></li>
+			<li><a href="#">Tvshows</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><button type="button" class="button-1">LOGOUT</button></li>
+		</ul>
+	</div>
 
-					<!-- Logo -->
-						<div id="logo">
-							<form style="margin-top: 10px;" >
-								<label for="fileToUpload">
-							  <div class="profile-pic" style="margin: auto;" id="profile-view">
-								
-								<img class="profile-pic" src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"  id="img" >
-								<span>Change image</span>
-								 
-							  </div>
-							  </label>
-							  <input type="File" name="fileToUpload" id="fileToUpload" onchange='chooseFile(event)' />
-							</form>
-							<h1 id="title" style="padding: 10px; text-align: center; margin-bottom: 5px;">Username</h1>
-							<hr style="height: 2%; width: 50%;">
-							
+	<!--End of navbar-->
+
+	<!-- Header -->
+	<div id="header" style="margin-top: 50px; position: fixed;">
+
+		<div class="top">
+
+			<!-- Logo -->
+			<div id="logo">
+				<form style="margin-top: 10px;">
+					<label for="fileToUpload">
+						<div class="profile-pic" style="margin: auto;" id="profile-view">
+
+							<img class="profile-pic"
+								src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
+								id="img">
+							<span>Change image</span>
+
 						</div>
-
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#top" id="top-link"><span class="icon solid fa-key">Change Password</span></a></li>
-							<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-film">My Movies</span></a></li>
-							<li><a href="#about" id="about-link"><span class="icon solid fa-tv">My TV Shows</span></a></li>
-							<li><a href="#contact" id="contact-link"><span class="icon solid fa-heart">Favourites</span></a></li>
-						</ul>
-					</nav>
+					</label>
+					<input type="File" name="fileToUpload" id="fileToUpload" onchange='chooseFile(event)' />
+				</form>
+				<h1 id="title" style="padding: 10px; margin-top: 2rem; text-align: center; margin-bottom: 1rem;">Username</h1>
+				<hr style="height: 2%; width: 50%;">
 
 			</div>
 
-			<div class="bottom">
-
-				<!-- Social Icons -->
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-
-			</div>
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#top" id="top-link"><span class="icon solid fa-key">Change Password</span></a></li>
+					<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-film">My Movies</span></a>
+					</li>
+					<li><a href="#about" id="about-link"><span class="icon solid fa-tv">My TV Shows</span></a></li>
+					<li><a href="#contact" id="contact-link"><span class="icon solid fa-heart">Favourites</span></a>
+					</li>
+				</ul>
+			</nav>
 
 		</div>
+
+		<div class="bottom">
+
+			<!-- Social Icons -->
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+
+		</div>
+
+	</div>
 
 	<!-- Main -->
-		<div id="main">
+	<div id="main">
 
-			<!-- Intro -->
-				<section id="top" class="one dark cover">
-					<div class="container">
+		<!-- Intro -->
+		<section id="top" class="one dark cover">
+			<div class="container">
 
-						<header>
-							<h2 class="alt">Welcome to your Dashboard</h2>
-							<p>All your saved movies and TV shows show up here.<br />
-							Check out your selected favourites.</p>
-						</header>
+				<header>
+					<h2 class="alt">Welcome to your Dashboard</h2>
+					<p>All your saved movies and TV shows show up here.<br />
+						Check out your selected favourites.</p>
+				</header>
+
+			</div>
+		</section>
+
+		<!-- My Movies -->
+		<section id="portfolio" class="two">
+			<div class="container">
+
+				<header>
+					<h2>My Movies</h2>
+				</header>
+
+				<div class="row">
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/movie1.jpg" alt="" /></a>
+							<header>
+								<h3>moviedetails</h3>
+							</header>
+						</article>
+					</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/movie2.jpg" alt="" /></a>
+							<header>
+								<h3>moviedetails</h3>
+							</header>
+						</article>
 
 					</div>
-				</section>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/movie3.jpg" alt="" /></a>
+							<header>
+								<h3>moviedetails</h3>
+							</header>
+						</article>
+					</div>
+				</div>
 
-			<!-- My Movies -->
-				<section id="portfolio" class="two">
-					<div class="container">
+			</div>
+		</section>
 
-						<header>
-							<h2>My Movies</h2>
-						</header>
+		<!-- TV Shows -->
+		<section id="about" class="three">
+			<div class="container">
 
-						<div class="row">
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#" class="image fit"><img src="images/movie1.jpg" alt="" /></a>
-									<header>
-										<h3>moviedetails</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#" class="image fit"><img src="images/movie2.jpg" alt="" /></a>
-									<header>
-										<h3>moviedetails</h3>
-									</header>
-								</article>
-								
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#" class="image fit"><img src="images/movie3.jpg" alt="" /></a>
-									<header>
-										<h3>moviedetails</h3>
-									</header>
-								</article>
-							</div>
-						</div>
+				<header>
+					<h2>My TV Shows</h2>
+				</header>
+
+				<div class="row">
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/tvshow1.jpg" alt="" /></a>
+							<header>
+								<h3>showdetails</h3>
+							</header>
+						</article>
+					</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/tvshow2.jpg" alt="" /></a>
+							<header>
+								<h3>showdetails</h3>
+							</header>
+						</article>
 
 					</div>
-				</section>
-
-			<!-- TV Shows -->
-				<section id="about" class="three">
-					<div class="container">
-
-						<header>
-							<h2>My TV Shows</h2>
-						</header>
-	
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/tvshow1.jpg" alt="" /></a>
-										<header>
-											<h3>showdetails</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/tvshow2.jpg" alt="" /></a>
-										<header>
-											<h3>showdetails</h3>
-										</header>
-									</article>
-									
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/tvshow3.jpg" alt="" /></a>
-										<header>
-											<h3>showdetails</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/tvshow3.jpg" alt="" /></a>
+							<header>
+								<h3>showdetails</h3>
+							</header>
+						</article>
 					</div>
-				</section>
+				</div>
+			</div>
+		</section>
 
-			<!-- Favourites -->
-				<section id="contact" class="four">
-					<div class="container">
+		<!-- Favourites -->
+		<section id="contact" class="four">
+			<div class="container">
 
-						<header>
-							<h2>Favourites</h2>
-						</header>
-				
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/fav1.jpg" alt="" /></a>
-										<header>
-											<h3>fav</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/fav2.jpg" alt="" /></a>
-										<header>
-											<h3>fav</h3>
-										</header>
-									</article>
-									
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/fav3.jpg" alt="" /></a>
-										<header>
-											<h3>fav</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+				<header>
+					<h2>Favourites</h2>
+				</header>
+
+				<div class="row">
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/fav1.jpg" alt="" /></a>
+							<header>
+								<h3>fav</h3>
+							</header>
+						</article>
+					</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/fav2.jpg" alt="" /></a>
+							<header>
+								<h3>fav</h3>
+							</header>
+						</article>
 
 					</div>
-				</section>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/fav3.jpg" alt="" /></a>
+							<header>
+								<h3>fav</h3>
+							</header>
+						</article>
+					</div>
+				</div>
 
-		</div>
+			</div>
+		</section>
 
-	
+	</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
-			<script src="assets/js/user.js"></script>
 
-	</body>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+	<script src="assets/js/user.js"></script>
+
+</body>
+
 </html>
