@@ -6,9 +6,185 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="CSS/dashboard.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="is-preload">
+
+	<style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-custom-primary {
+            background-color: #331832;
+            color: white;
+        }
+
+
+        .bg-custom-secondary {
+            background-color: #D81E58;
+        }
+
+        .smol-text {
+            font-size: 0.9rem;
+        }
+
+        .bg-custom-analogous {
+            background-color: #3066BE;
+            color: white;
+        }
+
+        .bg-custom-analogous:hover {
+            background-color: #3b77d8;
+            color: white;
+        }
+
+        /*navbar*/
+        .nav {
+            background: #3066BE;
+            width: 100%;
+            display: flex;
+            top: 0px;
+            padding: 0 1rem;
+            position: fixed;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: #f8f8f8;
+            margin: 6px 0;
+        }
+
+
+        label.logo {
+            color: white;
+            font-size: 35px;
+            padding: .4rem 0;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .nav ul {
+            transition: 0.2s ease-in-out all;
+
+            float: right;
+            margin: 0;
+        }
+
+        .nav ul li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .nav ul li a {
+            color: white;
+            font-size: 17px;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        a.active,
+        a:hover {
+            background: #D81E5B;
+            transition: .5s;
+        }
+
+        .button-1 {
+            background-color: #331832;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .button-1:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #check {
+            display: none;
+        }
+
+        .toggle{
+            height: 100% !important;
+            display: block !important;
+            /* width: 100% !important; */
+        }
+        @media (max-width:952px) {
+            label.logo {
+                font-size: 30px;
+                margin: 0;
+            }
+
+            .nav ul li a,
+            button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width:858px) {
+            .nav {
+                padding: 0;
+            }
+
+            .hamburger {
+                display: block;
+                margin: 0 1rem;
+            }
+
+            label.logo {
+                margin-right: auto;
+
+            }
+
+            .nav ul {
+                width: 100%;
+                height: 0;
+                background: #3066BE;
+                text-align: center;
+                transition: all .5s;
+                margin: 0;
+                height: 0;
+                display: none;
+                /* width: 0; */
+            }
+
+            .nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            .nav ul li a {
+                font-size: 20px;
+            }
+
+            a:hover,
+            a.active {
+                background: none;
+                color: #D81E5B;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
 
 	<!--Nav Bar-->
 	<div class="nav">
@@ -20,10 +196,10 @@
 
 		<label class="logo">Movie Lelo</label>
 		<ul>
-			<li><a class="active" href="#">Home</a></li>
+			<li><a href="main.html">Home</a></li>
 			<li><a href="#">Movies</a></li>
 			<li><a href="#">Tvshows</a></li>
-			<li><a href="#">Profile</a></li>
+			<li><a class="active" href="#">Profile</a></li>
 			<li><button type="button" class="button-1">LOGOUT</button></li>
 		</ul>
 	</div>
@@ -39,18 +215,17 @@
 			<div id="logo">
 				<form style="margin-top: 10px;">
 					<label for="fileToUpload">
-						<div class="profile-pic" style="margin: auto;" id="profile-view">
-
-							<img class="profile-pic"
-								src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
-								id="img">
-							<span>Change image</span>
-
-						</div>
+						
+						<div class="profile-pic">
+							<img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="Avatar" class="image">
+							<div class="overlay">
+							  <div class="text">Change photo</div>
+							</div>
+						  </div>
 					</label>
 					<input type="File" name="fileToUpload" id="fileToUpload" onchange='chooseFile(event)' />
 				</form>
-				<h1 id="title" style="padding: 10px; margin-top: 2rem; text-align: center; margin-bottom: 1rem;">Username</h1>
+				<h1 id="title" style="padding: 10px; margin-top: 1 rem; text-align: center; margin-bottom: 1rem;">Username</h1>
 				<hr style="height: 2%; width: 50%;">
 
 			</div>
@@ -58,30 +233,18 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="#top" id="top-link"><span class="icon solid fa-key">Change Password</span></a></li>
-					<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-film">My Movies</span></a>
-					</li>
-					<li><a href="#about" id="about-link"><span class="icon solid fa-tv">My TV Shows</span></a></li>
-					<li><a href="#contact" id="contact-link"><span class="icon solid fa-heart">Favourites</span></a>
-					</li>
+					<li><a href="#top" id="top-link"><span class="icon solid">Change Password</span></a></li>
+					<li><a href="#portfolio" id="portfolio-link"><span class="icon solid">My Movies</span></a></li>
+					<li><a href="#about" id="about-link"><span class="icon solid">My TV Shows</span></a></li>
+					<li><a href="#contact" id="contact-link"><span class="icon solid">Favourites</span></a></li>
+					<li><a href="main.html" id="home-link"><span class="icon solid">Home</span></a></li>
+					<li><a href="main.html" id="home-link"><span class="icon solid">Movies</span></a></li>
+					<li><a href="main.html" id="home-link"><span class="icon solid">TV Shows</span></a></li>
+					<li><a href="main.html" id="home-link"><span class="icon solid">Logout</span></a></li>
 				</ul>
 			</nav>
 
 		</div>
-
-		<div class="bottom">
-
-			<!-- Social Icons -->
-			<ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-
-		</div>
-
 	</div>
 
 	<!-- Main -->
