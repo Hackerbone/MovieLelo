@@ -8,200 +8,208 @@
 	<link rel="icon" href="assets/favicon-logo.png">
 	<link rel="stylesheet" href="CSS/dashboard.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="script.js"></script>
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
 </head>
 
 <body class="is-preload">
 
 	<style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
+		* {
+			font-family: 'Poppins', sans-serif;
+		}
 
-        .bg-custom-primary {
-            background-color: #331832;
-            color: white;
-        }
-
-
-        .bg-custom-secondary {
-            background-color: #D81E58;
-        }
-
-        .smol-text {
-            font-size: 0.9rem;
-        }
-
-        .bg-custom-analogous {
-            background-color: #3066BE;
-            color: white;
-        }
-
-        .bg-custom-analogous:hover {
-            background-color: #3b77d8;
-            color: white;
-        }
-
-        /*navbar*/
-        .nav {
-            background: #3066BE;
-            width: 100%;
-            display: flex;
-            top: 0px;
-            padding: 0 1rem;
-            position: fixed;
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hamburger {
-            display: none;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 2px;
-            background-color: #f8f8f8;
-            margin: 6px 0;
-        }
+		.bg-custom-primary {
+			background-color: #331832;
+			color: white;
+		}
 
 
-        label.logo {
-            color: white;
-            font-size: 35px;
-            padding: .4rem 0;
-            font-weight: bold;
-            margin-right: auto;
-        }
+		.bg-custom-secondary {
+			background-color: #D81E58;
+		}
 
-        .nav ul {
-            transition: 0.2s ease-in-out all;
+		.smol-text {
+			font-size: 0.9rem;
+		}
 
-            float: right;
-            margin: 0;
-        }
+		.bg-custom-analogous {
+			background-color: #3066BE;
+			color: white;
+		}
 
-        .nav ul li {
-            display: inline-block;
-            margin: 0 5px;
-        }
+		.bg-custom-analogous:hover {
+			background-color: #3b77d8;
+			color: white;
+		}
 
-        .nav ul li a {
-            color: white;
-            font-size: 17px;
-            padding: 0.5rem 1rem;
-            text-transform: uppercase;
-            border-radius: 3px;
-            text-decoration: none;
-        }
+		/*navbar*/
+		.nav {
+			background: #3066BE;
+			width: 100%;
+			display: flex;
+			top: 0px;
+			padding: 0 1rem;
+			position: fixed;
+			z-index: 1000;
+			justify-content: center;
+			align-items: center;
+		}
 
-        a.active,
-        a:hover {
-            background: #D81E5B;
-            transition: .5s;
-        }
+		.hamburger {
+			display: none;
+		}
 
-        .button-1 {
-            background-color: #331832;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-        }
+		.hamburger div {
+			width: 25px;
+			height: 2px;
+			background-color: #f8f8f8;
+			margin: 6px 0;
+		}
 
-        .button-1:hover {
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-        }
 
-        #check {
-            display: none;
-        }
+		label.logo {
+			color: white;
+			font-size: 35px;
+			padding: .4rem 0;
+			font-weight: bold;
+			margin-right: auto;
+		}
 
-        .toggle{
-            height: 100% !important;
-            display: block !important;
-            /* width: 100% !important; */
-        }
-        @media (max-width:952px) {
-            label.logo {
-                font-size: 30px;
-                margin: 0;
-            }
+		.nav ul {
+			transition: 0.2s ease-in-out all;
 
-            .nav ul li a,
-            button {
-                font-size: 16px;
-            }
-        }
+			float: right;
+			margin: 0;
+		}
 
-        @media (max-width:858px) {
-            .nav {
-                padding: 0;
-            }
+		.nav ul li {
+			display: inline-block;
+			margin: 0 5px;
+		}
 
-            .hamburger {
-                display: block;
-                margin: 0 1rem;
-            }
+		.nav ul li a {
+			color: white;
+			font-size: 17px;
+			padding: 0.5rem 1rem;
+			text-transform: uppercase;
+			border-radius: 3px;
+			text-decoration: none;
+		}
 
-            label.logo {
-                margin-right: auto;
+		a.active,
+		a:hover {
+			background: #D81E5B;
+			transition: .5s;
+		}
 
-            }
+		.button-1 {
+			background-color: #331832;
+			border: none;
+			color: white;
+			border-radius: 4px;
+			padding: 0.5rem 1rem;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 14px;
+		}
 
-            .nav ul {
-                width: 100%;
-                height: 0;
-                background: #3066BE;
-                text-align: center;
-                transition: all .5s;
-                margin: 0;
-                height: 0;
-                display: none;
-                /* width: 0; */
-            }
+		.button-1:hover {
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+		}
 
-            .nav ul li {
-                display: block;
-                margin: 50px 0;
-                line-height: 30px;
-            }
+		#check {
+			display: none;
+		}
 
-            .nav ul li a {
-                font-size: 20px;
-            }
+		.toggle {
+			height: 100% !important;
+			display: block !important;
+			/* width: 100% !important; */
+		}
 
-            a:hover,
-            a.active {
-                background: none;
-                color: #D81E5B;
-            }
+		@media (max-width:952px) {
+			label.logo {
+				font-size: 30px;
+				margin: 0;
+			}
 
-            #check:checked~ul {
-                left: 0;
-            }
-        }
-    </style>
+			.nav ul li a,
+			button {
+				font-size: 16px;
+			}
+		}
+
+		@media (max-width:858px) {
+			.nav {
+				padding: 0;
+			}
+
+			.hamburger {
+				display: block;
+				margin: 0 1rem;
+			}
+
+			label.logo {
+				margin-right: auto;
+
+			}
+
+			.nav ul {
+				width: 100%;
+				height: 0;
+				background: #3066BE;
+				text-align: center;
+				transition: all .5s;
+				margin: 0;
+				height: 0;
+				display: none;
+				/* width: 0; */
+			}
+
+			.nav ul li {
+				display: block;
+				margin: 50px 0;
+				line-height: 30px;
+			}
+
+			.nav ul li a {
+				font-size: 20px;
+			}
+
+			a:hover,
+			a.active {
+				background: none;
+				color: #D81E5B;
+			}
+
+			#check:checked~ul {
+				left: 0;
+			}
+		}
+	</style>
 
 	<!--Nav Bar-->
 	<div class="nav">
 		<div class="hamburger checkbtn" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 
 		<label class="logo">Movie Lelo</label>
 		<ul>
 			<li><a href="main.html">Home</a></li>
-			<li><a href="#">Movies</a></li>
-			<li><a href="#">Tvshows</a></li>
-			<li><a class="active" href="#">Profile</a></li>
-			<li><button type="button" class="button-1">LOGOUT</button></li>
+			<li><a href="main.html">Movies</a></li>
+			<li><a href="shows.html">Tvshows</a></li>
+			<li><a class="active" href="profile.html">Profile</a></li>
+			<li><button type="button" class="button-1" onclick="logout()">LOGOUT</button></li>
 		</ul>
 	</div>
 
@@ -216,17 +224,19 @@
 			<div id="logo">
 				<form style="margin-top: 10px;">
 					<label for="fileToUpload">
-						
+
 						<div class="profile-pic">
-							<img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="Avatar" class="image">
+							<img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
+								alt="Avatar" class="image">
 							<div class="overlay">
-							  <div class="text">Change photo</div>
+								<div class="text">Change photo</div>
 							</div>
-						  </div>
+						</div>
 					</label>
 					<input type="File" name="fileToUpload" id="fileToUpload" onchange='chooseFile(event)' />
 				</form>
-				<h1 id="title" style="padding: 10px; margin-top: 1 rem; text-align: center; margin-bottom: 1rem;">Username</h1>
+				<h1 id="title" style="padding: 10px; margin-top: 1 rem; text-align: center; margin-bottom: 1rem;">
+				</h1>
 				<hr style="height: 2%; width: 50%;">
 
 			</div>
@@ -256,7 +266,10 @@
 			<div class="container">
 
 				<header>
-					<h2 class="alt">Welcome to your Dashboard</h2>
+					<h2 class="alt">Welcome to your Dashboard,
+
+						<span id="name"></span>
+					</h2>
 					<p>All your saved movies and TV shows show up here.<br />
 						Check out your selected favourites.</p>
 				</header>
@@ -382,6 +395,38 @@
 
 	</div>
 
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyB-qihmNr_tKv_Yh-PXGSxBq8aEnMC_KzM",
+			authDomain: "movielelo-user.firebaseapp.com",
+			projectId: "movielelo-user",
+			storageBucket: "movielelo-user.appspot.com",
+			messagingSenderId: "863027506897",
+			appId: "1:863027506897:web:9c0dd10366988910e21ff0",
+			measurementId: "G-69EF91VJJC",
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		//firebase.analytics();
+		const auth = firebase.auth()
+
+		const db = firebase.database();
+
+		console.log("HIIIIIIIIiii")
+		const userId = localStorage.getItem('uid');
+		console.log(userId);
+		var ref = db.ref("Users/" + userId);
+
+		ref.on("value", async function (snapshot) {
+			let user = await snapshot.val().profile;
+			if (user.name) {
+				document.getElementById("name").innerHTML = `${user.name}`
+				document.getElementById("title").innerHTML = `${user.name}`
+
+			}
+			console.log(user, "AAGAYA PLS DEKGLo")
+		});
+	</script>
 
 
 	<!-- Scripts -->
@@ -395,7 +440,7 @@
 
 	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
-	<script src="assets/js/user.js"></script>
+	<!-- <script src="assets/js/user.js"></script> -->
 
 </body>
 

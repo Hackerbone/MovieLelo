@@ -1,11 +1,10 @@
 function logout() {
-  firebase
-    .auth()
+  auth
     .signOut()
     .then(() => {
       alert("Logged Out Successfully");
       localStorage.removeItem("uid");
-      location.href = "/landing.html";
+      location.href = "landing.html";
     })
     .catch((error) => {
       console.log(error);

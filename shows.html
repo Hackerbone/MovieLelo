@@ -126,11 +126,12 @@
             display: none;
         }
 
-        .toggle{
+        .toggle {
             height: 100% !important;
             display: block !important;
             /* width: 100% !important; */
         }
+
         @media (max-width:952px) {
             label.logo {
                 font-size: 30px;
@@ -192,7 +193,7 @@
         }
     </style>
     <div class="nav">
-        <div class="hamburger"  onclick="openNav()" id="hamburger">
+        <div class="hamburger" onclick="openNav()" id="hamburger">
             <div></div>
             <div></div>
             <div></div>
@@ -200,10 +201,10 @@
         <label class="logo">Movie Lelo</label>
         <ul id="dropdown">
             <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Tvshows</a></li>
+            <li><a href="main.html">Movies</a></li>
+            <li><a href="shows.html">Tvshows</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><button type="button" class="button-1">LOGOUT</button></li>
+            <li><button type="button" class="button-1" onclick="logout()">LOGOUT</button></li>
         </ul>
     </div>
     <div class="container-fluid bg-custom-primary">
@@ -250,7 +251,7 @@
 
         }
 
-        function openNav () {
+        function openNav() {
             $("#dropdown").toggleClass('toggle');
             // console.log("HI")
         }

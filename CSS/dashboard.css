@@ -2291,7 +2291,10 @@ input, select, textarea {
 			#main > section.one {
 				margin-top: 50px;
 				background-color: #81918E;
-				background-image: url("/Users/anika/Desktop/html/Profilepage/images/dashboard_background.png");
+				background-image: url("../assets/images/dashboard_background.png");
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
 			}
 
 			#main > section.two {

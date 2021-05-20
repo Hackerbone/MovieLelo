@@ -211,8 +211,8 @@
         <label class="logo">Movie Lelo</label>
         <ul id="dropdown">
             <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Tvshows</a></li>
+            <li><a href="main.html">Movies</a></li>
+            <li><a href="shows.html">Tvshows</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><button type="button" class="button-1" onclick="logout()">LOGOUT</button></li>
         </ul>
@@ -273,12 +273,43 @@
 
         const addMovie = (movieId) => {
             const userId = localStorage.getItem('uid');
-            console.log("YEH HAI MOVIE ID " + movieId)
-            const userRef = firebase.database().ref('Users/' + userId);
-            userRef.on('value', (snap) => {
-                console.log(snap.val().profile)
-            })
-
+            console.log(userId)
+            console.log("MOVIE ID " + movieId)
+            // var ref = firebase.database().ref("Users/" + userId);
+            // Attach an asynchronous callback to read the data at our posts reference
+            // let profile = {};
+            // ref.on("value", async function (snapshot) {
+            //         let user = await snapshot.val().profile;
+            //         let arr = [];
+            //         if (user.movies) {
+            //             arr = await user.movies;
+            //             console.log("ARR", arr)
+            //         }
+            //         if (user) {
+            //             arr[arr.length] = movieId;
+            //             profile = {
+            //                 name: user.name,
+            //                 email: user.email,
+            //                 uid: user.uid,
+            //                 movies: arr
+            //             }
+            //             console.log({
+            //                 profile
+            //             })
+            //         }
+            //     },
+            //     function (errorObject) {
+            //         console.log("The read failed: " + errorObject.code);
+            //     });
+            // // console.log(Object.keys(await profile).length);
+            // if (profile) {
+            //     console.log(profile)
+            //     firebase.database().ref('Users/' + userId).set({
+            //         profile
+            //     }).then(() => {
+            //         alert("Movie Added to favourites")
+            //     })
+            // }
         }
 
         function openNav() {
